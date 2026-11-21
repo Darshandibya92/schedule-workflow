@@ -1,0 +1,14 @@
+name: Schedule Workflow
+
+on:
+ workflow_dispatch:
+ schedule:
+   - cron: '0 0 * * *' # minute, hour, day of month, month, day of week UTC, IST
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: print message
+        run: echo "Hello, this is a scheduled workflow running at midnight every day!"
